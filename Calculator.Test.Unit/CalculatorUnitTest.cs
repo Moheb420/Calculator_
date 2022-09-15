@@ -11,7 +11,7 @@ namespace Calculator.Test.Unit
         public void AddNumberWithTwoParameter()
         {
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Add(2, 2), Is.EqualTo(4));
+            Assert.That(calc.Add(2, 2), Is.EqualTo(3));
 
         }
 

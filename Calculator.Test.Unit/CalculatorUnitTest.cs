@@ -61,58 +61,58 @@ namespace Calculator.Test.Unit
 
         }
 
-        //[Test]
-        //public void SubstractFromAccumulator()
-        //{
+        [Test]
+        public void SubstractFromAccumulator()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    calc.Add(2);
-        //    calc.Substract(1);
-        //    Assert.That(calc.accumulator, Is.EqualTo(1));
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            calc.Add(2);
+            calc.Substract(1);
+            Assert.That(calc.accumulator, Is.EqualTo(1));
 
-        //}
+        }
 
-        //[Test]
-        //public void MultiplyWithAccumulator()
-        //{
+        [Test]
+        public void MultiplyWithAccumulator()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    calc.Add(2);
-        //    calc.Multiply(4);
-        //    Assert.That(calc.accumulator, Is.EqualTo(8));
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            calc.Add(2);
+            calc.Multiply(4);
+            Assert.That(calc.accumulator, Is.EqualTo(8));
 
-        //}
+        }
 
 
-        //[Test]
-        //public void DivideWithAccumulator()
-        //{
+        [Test]
+        public void DivideWithAccumulator()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    calc.Add(32);
-        //    calc.Divide(16);
-        //    Assert.That(calc.accumulator, Is.EqualTo(2));
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            calc.Add(32);
+            calc.Divide(16);
+            Assert.That(calc.accumulator, Is.EqualTo(2));
 
-        //}
+        }
 
-        //[Test]
-        //public void PowerOfAccumulator()
-        //{
+        [Test]
+        public void PowerOfAccumulator()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    calc.Add(2);
-        //    calc.Power(2);
-        //    Assert.That(calc.accumulator, Is.EqualTo(4));
-        //}
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            calc.Add(2);
+            calc.Power(2);
+            Assert.That(calc.accumulator, Is.EqualTo(4));
+        }
 
-        //[Test]
-        //public void ClearAccumulator()
-        //{
+        [Test]
+        public void ClearAccumulator()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    calc.Add(12);
-        //    calc.clear();
-        //    Assert.That(calc.accumulator, Is.EqualTo(0));
-        //}
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            calc.Add(12);
+            calc.clear();
+            Assert.That(calc.accumulator, Is.EqualTo(0));
+        }
     }
 }

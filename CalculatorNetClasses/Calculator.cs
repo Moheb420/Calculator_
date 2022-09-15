@@ -30,17 +30,15 @@ namespace Calculator_
             return Math.Pow(x, exp);
         }
 
-
-
-        //-----------------------------------------------------------------------------------------------
-        //public double Divide(double dividend, double divisor)
-        //{
-        //    if (divisor < 0)
-        //    {
-        //        throw new Exception("You can not divide with minus number");
-        //    }
-        //    return dividend / divisor;
-        //}
+      
+        public double Divide(double dividend, double divisor)
+        {
+            if (divisor < 0)
+            {
+                throw new Exception("You can not divide with minus number");
+            }
+            return dividend / divisor;
+        }
 
 
         //public double accumulator

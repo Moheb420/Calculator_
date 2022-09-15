@@ -41,14 +41,14 @@ namespace Calculator.Test.Unit
             Assert.That(calc.Power(2,3), Is.EqualTo(8));
         }
 
-        //[Test]
-        //public void DivideWithTwoParameter()
-        //{
+        [Test]
+        public void DivideWithTwoParameter()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    Assert.That(calc.Divide(4, 2), Is.EqualTo(2));
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            Assert.That(calc.Divide(4, 2), Is.EqualTo(2));
 
-        //}
+        }
 
         //----------------------------------------------------------------------------------------
         //[Test]

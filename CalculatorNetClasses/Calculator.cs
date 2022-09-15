@@ -41,22 +41,22 @@ namespace Calculator_
         }
 
 
-        //public double accumulator
-        //{
-        //    get;
-        //    private set;
+        public double accumulator
+        {
+            get;
+            private set;
 
-        //}
+        }
         //public void clear()
         //{
         //    accumulator = 0;
         //}
 
-        //public double Add(double addend)
-        //{
-        //    accumulator = accumulator + addend;
-        //    return accumulator;
-        //}
+        public double Add(double addend)
+        {
+            accumulator = accumulator + addend;
+            return accumulator;
+        }
 
 
         //public double Substract(double substractor)

@@ -11,7 +11,7 @@ namespace Calculator.Test.Unit
         public void AddNumberWithTwoParameter()
         {
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Add(2, 2), Is.EqualTo(2));
+            Assert.That(calc.Add(2, 2), Is.EqualTo(4));
 
         }
 
@@ -20,7 +20,7 @@ namespace Calculator.Test.Unit
         {
 
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Subtract(3, 1), Is.EqualTo(5));
+            Assert.That(calc.Subtract(3, 1), Is.EqualTo(2));
 
         }
 
@@ -51,15 +51,15 @@ namespace Calculator.Test.Unit
         }
 
         //----------------------------------------------------------------------------------------
-        //[Test]
-        //public void AddNumberWithAccumulator()
-        //{
+        [Test]
+        public void AddNumberWithAccumulator()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    calc.Add(2);
-        //    Assert.That(calc.accumulator, Is.EqualTo(2));
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            calc.Add(2);
+            Assert.That(calc.accumulator, Is.EqualTo(2));
 
-        //}
+        }
 
         //[Test]
         //public void SubstractFromAccumulator()

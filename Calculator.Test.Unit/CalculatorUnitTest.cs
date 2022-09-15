@@ -51,15 +51,15 @@ namespace Calculator.Test.Unit
         }
 
         //----------------------------------------------------------------------------------------
-        //[Test]
-        //public void AddNumberWithAccumulator()
-        //{
+        [Test]
+        public void AddNumberWithAccumulator()
+        {
 
-        //    Calculator_.Calculator calc = new Calculator_.Calculator();
-        //    calc.Add(2);
-        //    Assert.That(calc.accumulator, Is.EqualTo(2));
+            Calculator_.Calculator calc = new Calculator_.Calculator();
+            calc.Add(2);
+            Assert.That(calc.accumulator, Is.EqualTo(2));
 
-        //}
+        }
 
         //[Test]
         //public void SubstractFromAccumulator()

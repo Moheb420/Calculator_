@@ -20,7 +20,7 @@ namespace Calculator.Test.Unit
         {
 
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Subtract(3, 1), Is.EqualTo(2));
+            Assert.That(calc.Subtract(3, 1), Is.EqualTo(5));
 
         }
 

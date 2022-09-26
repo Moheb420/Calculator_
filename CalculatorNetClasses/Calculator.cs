@@ -11,94 +11,24 @@ namespace Calculator_
 
 
         private double c = 0;
-        public double Add(double a, double b)
-        {
 
-            if (a > 0 && b > 0)
-            {
-                c = a + b;
-            }
-            else if (a < 0 && b > 0)
-            {
-                throw new Exception("first parameter is less than 0 ");
-            }
-            else if (a > 0 && b < 0)
-            {
-                throw new Exception("second parameter is less than 0 ");
-            }
-            else
-            {
-                throw new Exception("both parameters are less than 0 ");
-            }
+        public double Add(double a, double b) { return a + b; }
 
-            return c;
-        }
 
 
         public double Subtract(double a, double b)
         {
-            if (a > 0 && b > 0)
-            {
-                c = a - b;
-            }
-            else if (a < 0 && b > 0)
-            {
-                throw new Exception("first parameter should be greater than 0 ");
-            }
-            else if (a > 0 && b < 0)
-            {
-                throw new Exception("second parameter should be greater than 0 ");
-            }
-            else
-            {
-                throw new Exception("both parameters should be greater than 0 ");
-            }
-
-            return c;
+            return a - b;
         }
 
         public double Multiply(double a, double b)
         {
-            if (a > 0 && b > 0)
-            {
-                c = a * b;
-            }
-            else if (a < 0 && b > 0)
-            {
-                throw new Exception("first parameter should be greater than 0 ");
-            }
-            else if (a > 0 && b < 0)
-            {
-                throw new Exception("second parameter should be greater than 0 ");
-            }
-            else
-            {
-                throw new Exception("both parameters should be greater than 0 ");
-            }
-
-            return c;
+            return a * b;
         }
 
         public double Power(double a, double b)
         {
-            if (a > 0 && b > 0)
-            {
-                c = Math.Pow(a, b);
-            }
-            else if (a < 0 && b > 0)
-            {
-                throw new Exception("first parameter should be greater than 0 ");
-            }
-            else if (a > 0 && b < 0)
-            {
-                throw new Exception("second parameter should be greater than 0 ");
-            }
-            else
-            {
-                throw new Exception("both parameters should be greater than 0 ");
-            }
-
-            return c;
+            return Math.Pow(a, b); ;
         }
 
         public double Divide(double dividend, double divisor)
@@ -106,11 +36,6 @@ namespace Calculator_
             if (divisor == 0)
             {
                 throw new DivideByZeroException("You can not divide with minus number");
-            }
-
-            if (dividend < 0)
-            {
-                throw new Exception("Nominator should be greater than 0");
             }
 
             return dividend / divisor;
@@ -150,58 +75,19 @@ namespace Calculator_
 
         public double Add(double a)
         {
-            if (a > 0)
-            {
-                accumulator += a;
-            }
-            else if (a < 0)
-            {
-                throw new Exception("Cannot add minus numbers");
-            }
-            else if (a == 0)
-            {
-                throw new Exception("Number should be greater than 0 ");
-            }
-
-            return accumulator;
+            return accumulator += a;
         }
 
 
         public double Substract(double a)
         {
-            if (a > 0)
-            {
-                accumulator = accumulator - a;
-            }
-            else if (a < 0)
-            {
-                throw new Exception("Number should be less than 0 ");
-            }
-            else if (a == 0)
-            {
-                throw new Exception("The result of substraction is the same as accumalator ");
-            }
-
-            return accumulator;
+            return accumulator -= a;
 
         }
 
         public double Multiply(double a)
         {
-            if (a > 0)
-            {
-                accumulator *= a;
-            }
-            else if (a < 0)
-            {
-                throw new Exception("Number should be less than 0 ");
-            }
-            else if (a == 0)
-            {
-                throw new Exception("Cannot muliply number by zero ");
-            }
-
-            return accumulator;
+            return accumulator *= a;
         }
 
 
@@ -224,10 +110,6 @@ namespace Calculator_
             if (a > 0)
             {
                 accumulator /= a;
-            }
-            else if (a < 0)
-            {
-                throw new Exception("Number should be less than 0 ");
             }
             else if (a == 0)
             {

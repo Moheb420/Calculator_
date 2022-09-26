@@ -11,292 +11,181 @@ namespace Calculator.Test.Unit
         {
         }
 
-        [Test]
-        public void AddNumberWithTwoParameter()
+        [TestCase(2, 2)]
+
+        [TestCase(5, 3)]
+
+        [TestCase(2, -22)]
+        public void AddNumberWithTwoParameter(double a, double b)
         {
+            double c = a + b;
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Add(2, 2), Is.EqualTo(4));
+            Assert.That(calc.Add(a, b), Is.EqualTo(c));
 
         }
 
-
-        [Test]
-        public void AddNumberWithTwoParameterWithExceptioinThrowFirstParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Add(2, -2));
-
-        }
-
-        [Test]
-        public void AddNumberWithTwoParameterWithExceptioinThrow2()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Add(-2, 2));
-
-        }
         //-------------------------------------------------------------------------------------------------------
 
 
-        [Test]
-        public void SubstractWithTwoParameterr()
-        {
+        [TestCase(2, 2)]
 
+        [TestCase(0, 3)]
+
+        [TestCase(-2, -22)]
+        public void SubstractWithTwoParameterr(double a, double b)
+        {
+            double c = a - b;
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Subtract(3, 1), Is.EqualTo(2));
+            Assert.That(calc.Subtract(a, b), Is.EqualTo(c));
 
         }
-
-
-
-        [Test]
-        public void SubtractWithTwoParameterWithExceptioinThrowFirstParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Subtract(2, -8));
-
-        }
-
-        [Test]
-        public void SubtractNumberWithTwoParameterWithExceptioinSecondParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Subtract(-7, 2));
-
-        }
-
-
-
 
         //-------------------------------------------------------------------------------------------------------
 
-        [Test]
-        public void MultiplyWithTwoParameter()
+        [TestCase(2, 0)]
+
+        [TestCase(5, -3)]
+
+        [TestCase(-2, -22)]
+        public void MultiplyWithTwoParameter(double a, double b)
         {
+            double c = a * b;
 
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Multiply(2, 4), Is.EqualTo(8));
-
-        }
-
-        [Test]
-        public void MultiplyWithTwoParameterWithExceptioinThrowFirstParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Multiply(5, -66));
-
-        }
-
-        [Test]
-        public void MultiplyNumberWithTwoParameterWithExceptioinSecondParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Multiply(-1, 9));
+            Assert.That(calc.Multiply(a, b), Is.EqualTo(c));
 
         }
 
 
         //-------------------------------------------------------------------------------------------------------
 
+        [TestCase(2, -2)]
 
-        [Test]
-        public void PowerWithTwoParameter()
+        [TestCase(-5, 3)]
+
+        [TestCase(2, 0)]
+        public void PowerWithTwoParameter(double a, double b)
         {
-
+            double c = Math.Pow(a, b);
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Power(2, 3), Is.EqualTo(8));
-        }
-        [Test]
-        public void PowerWithTwoParameterWithExceptioinThrowFirstParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Power(5, -6));
-
+            Assert.That(calc.Power(a, b), Is.EqualTo(c));
         }
 
-        [Test]
-        public void PowerNumberWithTwoParameterWithExceptioinSecondParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Power(-5, 9));
-
-        }
 
 
         //-------------------------------------------------------------------------------------------------------
-        [Test]
-        public void DivideWithTwoParameter()
-        {
+        [TestCase(2, 1)]
 
+        [TestCase(-5, 2)]
+
+        [TestCase(2, -2)]
+        public void DivideWithTwoParameter(double a, double b)
+        {
+            double c = a / b;
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.That(calc.Divide(4, 2), Is.EqualTo(2));
+            Assert.That(calc.Divide(a, b), Is.EqualTo(c));
 
         }
 
-        [Test]
-        public void DivideWithTwoParameterWithExceptioinThrowFirstParameter()
+        [TestCase(2, 0)]
+        public void DivideWithTwoParameterWithExceptioinThrowFirstParameter(double a, double b)
         {
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<DivideByZeroException>(() => calc.Divide(5, 0));
+            Assert.Throws<DivideByZeroException>(() => calc.Divide(a, b));
 
         }
 
-        [Test]
-        public void DivideNumberWithTwoParameterWithExceptioinSecondParameter()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            Assert.Throws<Exception>(() => calc.Divide(-5, 9));
-
-        }
 
         //----------------------------------------------------------------------------------------
-        [Test]
-        public void AddNumberWithAccumulator()
+        [TestCase(2)]
+        [TestCase(-2)]
+        [TestCase(0)]
+
+        public void AddNumberWithAccumulator(double a)
         {
 
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(2);
-            Assert.That(calc.accumulator, Is.EqualTo(2));
-
-        }
-
-        [Test]
-        public void AddNumberWithAccumulatorExceptionThrowLessThanZero()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-
-            Assert.Throws<Exception>(() => calc.Add(-2));
-
-        }
-
-        [Test]
-        public void AddNumberWithAccumulatorExceptionThrowNumberIsEqualToZero()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-
-            Assert.Throws<Exception>(() => calc.Add(0));
-
-        }
-
-        //-------------------------------------------------------------------------------------------------------
-        [Test]
-        public void SubstractFromAccumulator()
-        {
-
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(2);
-            calc.Substract(1);
-            Assert.That(calc.accumulator, Is.EqualTo(1));
-
-        }
-
-        [Test]
-        public void SubtractWithAccumulatorExceptionThrowLessThanZero()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(7);
-            Assert.Throws<Exception>(() => calc.Substract(-2));
-
-        }
-
-        [Test]
-        public void SubtractWithAccumulatorExceptionThrowNumberIsEqualToZero()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(8);
-            Assert.Throws<Exception>(() => calc.Substract(0));
+            double c = calc.Add(a);
+            Assert.That(calc.accumulator, Is.EqualTo(c));
 
         }
 
 
         //-------------------------------------------------------------------------------------------------------
-        [Test]
-        public void MultiplyWithAccumulator()
+        [TestCase(22)]
+        [TestCase(-12)]
+        [TestCase(0)]
+        public void SubstractFromAccumulator(double a)
         {
-
+            double c = 0.0;
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(2);
-            calc.Multiply(4);
-            Assert.That(calc.accumulator, Is.EqualTo(8));
+            calc.Add(a);
+            c = calc.Substract(a);
+            Assert.That(calc.accumulator, Is.EqualTo(c));
 
         }
 
-        [Test]
-        public void MultiplyWithAccumulatorExceptionThrowLessThanZero()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(7);
-            Assert.Throws<Exception>(() => calc.Multiply(-9));
 
-        }
 
-        [Test]
-        public void MultiplyWithAccumulatorExceptionThrowNumberIsEqualToZero()
+
+        //-------------------------------------------------------------------------------------------------------
+        [TestCase(32)]
+        [TestCase(-12)]
+        [TestCase(3)]
+        public void MultiplyWithAccumulator(double a)
         {
+            double c = 0.0;
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(5);
-            Assert.Throws<Exception>(() => calc.Multiply(0));
+            calc.Add(a);
+            c = calc.Multiply(a);
+            Assert.That(calc.accumulator, Is.EqualTo(c));
 
         }
 
 
         //-------------------------------------------------------------------------------------------------------
-        [Test]
-        public void DivideWithAccumulator()
+        [TestCase(22)]
+        [TestCase(-2)]
+        [TestCase(2)]
+        public void DivideWithAccumulator(double a)
         {
-
+            double c = 0.0;
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(32);
-            calc.Divide(16);
-            Assert.That(calc.accumulator, Is.EqualTo(2));
+            calc.Add(a);
+            c = calc.Divide(a);
+            Assert.That(calc.accumulator, Is.EqualTo(c));
 
         }
 
-        [Test]
-        public void DivideWithAccumulatorExceptionThrowLessThanZero()
+        [TestCase(0)]
+        public void DivideWithAccumulatorExceptionThrowNumberIsEqualToZero(double a)
         {
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(12);
-            Assert.Throws<Exception>(() => calc.Divide(-9));
-
-        }
-
-        [Test]
-        public void DivideWithAccumulatorExceptionThrowNumberIsEqualToZero()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(25);
-            Assert.Throws<DivideByZeroException>(() => calc.Divide(0));
+            calc.Add(2);
+            Assert.Throws<DivideByZeroException>(() => calc.Divide(a));
 
         }
 
         //-------------------------------------------------------------------------------------------------------
-        [Test]
-        public void PowerOfAccumulator()
+        [TestCase(2)]
+        [TestCase(3)]
+        [TestCase(2)]
+        public void PowerOfAccumulator(double a)
         {
-
+            double c = 0.0;
             Calculator_.Calculator calc = new Calculator_.Calculator();
             calc.Add(2);
-            calc.Power(2);
-            Assert.That(calc.accumulator, Is.EqualTo(4));
+            c = calc.Power(2);
+            Assert.That(calc.accumulator, Is.EqualTo(c));
         }
 
 
-        [Test]
-        public void PowerWithAccumulatorExceptionThrowLessThanZero()
+        [TestCase(2000)]
+        public void PowerWithAccumulatorExceptionThrowNumberIsGreatherThan1000(double a)
         {
             Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(32);
-            Assert.Throws<Exception>(() => calc.Power(-19));
-
-        }
-
-        [Test]
-        public void PowerWithAccumulatorExceptionThrowNumberIsGreatherThan1000()
-        {
-            Calculator_.Calculator calc = new Calculator_.Calculator();
-            calc.Add(45);
-            Assert.Throws<IndexOutOfRangeException>(() => calc.Power(2000));
+            double c = calc.Add(a);
+            Assert.Throws<IndexOutOfRangeException>(() => calc.Power(c));
 
         }
 
@@ -349,6 +238,6 @@ namespace Calculator.Test.Unit
             Assert.Throws<Exception>(() => calc.clear());
 
         }
-        
+
     }
 }
